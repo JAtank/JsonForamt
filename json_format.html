@@ -11,20 +11,6 @@
     <button onclick="jsonFormat()">请点击</button>
 </div>
 <script>
-    var obj = {
-        "name": "aa",
-        "age": "18",
-        "aihao": {
-            "one": "乒乓球",
-            "two": "篮球",
-            "three": {
-                "a": "羽毛球",
-                "b": "排球",
-                "c": [1, 2, 3]
-            }
-        },
-        num: 16
-    };
     var jsonContent = document.getElementById("json-content");
     function jsonFormat() {
         var text_content = document.getElementById("text-content").value;
@@ -45,7 +31,7 @@
             for (var a in jsonObj) {
                 if (typeof jsonObj[a] == 'object' && !(jsonObj[a] instanceof Array)) {
 //            如果属性是对象
-                    item += '<div><span>' + a + ':{</span><div style="padding-left: 20px">' + json2html(jsonObj[a]) + '</div>}</div>'
+                    item += '<div><span>' + a + ':{</span><div style="padding-left: 20px">' + json2html(jsonObj[a]) + '}</div></div>'
                 } else {
 //            属性不是对象
                     item += '<div><span>' + a + '</span>:<span>' + type(jsonObj[a]) + '</span></div>'
